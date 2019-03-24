@@ -1,4 +1,5 @@
 #include "common.h"
+#include "menu.h"
 
 
 int main()
@@ -6,31 +7,23 @@ int main()
   // Initialization
     //--------------------------------------------------------------------------------------
     init();
+    SetTargetFPS(60);
 
     loadTextures();
+
+    initMenu();
     
-
-    const char msg1[50] = "Hello World";
-
     // Main game loop
-    while (!WindowShouldClose())    // Detect window close button or ESC key
+    while (!WindowShouldClose() && !quit)    // Detect window close button or ESC key
     {
-        // Draw
-        //----------------------------------------------------------------------------------
-        BeginDrawing();
+      if(state == menu) updateMenu();
 
-            ClearBackground(WHITE);
-
-            DrawText(msg1, 20*scaleX, 20*scaleY, 20*scaleY, BLACK);
-            DrawText(FormatText("%dx%d", GetMouseX(), GetMouseY()), 20*scaleX, 40*scaleY, 20*scaleY, BLACK);
-            DrawText(FormatText("%dx%d", GetScreenWidth(), GetScreenHeight()), 20*scaleX, 60*scaleY, 20*scaleY, BLACK);
-            DrawText(FormatText("Scale x: %lf \tscale y: %lf", scaleX, scaleY), 20*scaleX, 80*scaleY, 20*scaleY, BLACK);
-
-            DrawTexture(textures[brick_5], 200*scaleX, 100*scaleY, WHITE);
-            
-
-        EndDrawing();
-        //----------------------------------------------------------------------------------
+      // Draw
+      //----------------------------------------------------------------------------------
+      BeginDrawing();
+        drawMenu();
+      EndDrawing();
+      //----------------------------------------------------------------------------------
     }
 
     // De-Initialization

@@ -6,7 +6,9 @@ void init()
   screenHeight = 450;
 
   InitWindow(screenWidth, screenHeight, "Just Another Arkanoid Clone");
-  ToggleFullscreen();
+  //ToggleFullscreen();
+  quit = false;
+  state = menu;
 
   if (!WindowShouldClose())  //not sure why but this is the only way I can make scale work. 
     {

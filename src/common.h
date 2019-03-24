@@ -33,6 +33,9 @@
 #define menu  0
 #define game  1
 
+int state;
+bool quit;
+
 double scaleX;
 double scaleY;
 
