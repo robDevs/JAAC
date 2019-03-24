@@ -47,6 +47,30 @@ void updateMenu()
         }
       }
     }
+
+    //keyboard controls
+    if(IsKeyReleased(KEY_UP)) pos--; 
+    if(IsKeyReleased(KEY_DOWN)) pos++;
+    if(pos < 0) pos = 3; 
+    if(pos > 3) pos = 0; 
+    if(IsKeyReleased(KEY_ENTER))
+    {
+      switch (pos)
+        {
+          case 0:
+            //state = game;
+            break;
+          case 1:
+            break;
+          case 2:
+            break;
+          case 3:
+            quit = true; 
+            break;
+          default:
+            break;
+        }
+    }
 }
 
 void drawMenu()
