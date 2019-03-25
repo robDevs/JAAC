@@ -1,5 +1,6 @@
 #include "common.h"
 #include "menu.h"
+#include "game.h"
 
 
 int main()
@@ -17,11 +18,13 @@ int main()
     while (!WindowShouldClose() && !quit)    // Detect window close button or ESC key
     {
       if(state == menu) updateMenu();
+      if(state == game) updateGame();
 
       // Draw
       //----------------------------------------------------------------------------------
       BeginDrawing();
-        drawMenu();
+        if(state == menu) drawMenu();
+        if(state == game) drawGame();
       EndDrawing();
       //----------------------------------------------------------------------------------
     }

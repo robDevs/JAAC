@@ -9,6 +9,7 @@ void initMenu()
 
 void updateMenu()
 {
+  //gamepad controls
   if (IsGamepadAvailable(GAMEPAD_PLAYER1))
     {
       if(GetGamepadAxisMovement(GAMEPAD_PLAYER1, 01) == -1.00 && !movedUp) 
@@ -33,7 +34,8 @@ void updateMenu()
         switch (pos)
         {
           case 0:
-            //state = game;
+            initGame();
+            state = game;
             break;
           case 1:
             break;
@@ -58,7 +60,8 @@ void updateMenu()
       switch (pos)
         {
           case 0:
-            //state = game;
+            initGame();
+            state = game;
             break;
           case 1:
             break;

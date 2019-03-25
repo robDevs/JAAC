@@ -2,6 +2,7 @@
 #define _MENU_
 
 #include "common.h"
+#include "game.h"
 
 int pos; 
 #define posMax 3

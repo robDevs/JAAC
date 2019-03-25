@@ -2,8 +2,8 @@
 
 void init()
 {
-  screenWidth = 800;
-  screenHeight = 450;
+  screenWidth = 452;
+  screenHeight = 452;
 
   InitWindow(screenWidth, screenHeight, "Just Another Arkanoid Clone");
   //ToggleFullscreen();
@@ -51,7 +51,7 @@ void loadTextures()
 void loadAndResize(Texture2D* texture, const char *src)
 {
   Image temp = LoadImage(src);
-  ImageResize(&temp, temp.width*scaleX, temp.height*scaleY);
+  ImageResize(&temp, temp.width/2*scaleX, temp.height/2*scaleY);
   *texture = LoadTextureFromImage(temp);
   UnloadImage(temp);
 }
