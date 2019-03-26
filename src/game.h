@@ -15,8 +15,11 @@ typedef struct Ball
 {
   Rectangle rect;
   int xVel; 
-  int Yvel;
+  int yVel;
   bool active;
+  int frame;
+  int frameTime;
+  bool hitFrame;
 }Ball;
 
 Brick bricks[11][6];
@@ -24,6 +27,12 @@ Brick bricks[11][6];
 Ball balls[4]; 
 
 Rectangle playerRect;
+
+int score;
+int multiplier;
+int extraBalls;
+
+int brickCount;
 
 void initGame();
 void updateGame();

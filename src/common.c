@@ -6,7 +6,7 @@ void init()
   screenHeight = 452;
 
   InitWindow(screenWidth, screenHeight, "Just Another Arkanoid Clone");
-  //ToggleFullscreen();
+  ToggleFullscreen();
   quit = false;
   state = menu;
 

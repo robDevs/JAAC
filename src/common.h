@@ -61,7 +61,7 @@ void init();
 #define lives_1         16
 #define lives_2         17
 #define lives_3         18
-#define lives_4         29
+#define lives_4         19
 #define lives_5         20
 #define paddle_long     21
 #define paddle          22
